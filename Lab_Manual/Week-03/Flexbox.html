@@ -1,0 +1,11 @@
+<div class="blog">
+    <article>Post 1</article>
+    <article>Post 2</article>
+    <article>Post 3</article>
+</div>
+
+<style>
+    .blog { display:flex; gap:1rem; }
+    .blog article { flex:1; padding:1rem; border:1px solid #eee; }
+    @media (max-width:900px) { .blog { flex-direction:column; } }
+</style>

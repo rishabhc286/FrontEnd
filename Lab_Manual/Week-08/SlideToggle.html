@@ -1,0 +1,10 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="faq">
+    <h3 class="q">What is HTML?</h3>
+    <div class="a">HTML is markup.</div>
+</div>
+
+<script>
+    $('.a').hide();
+    $('.q').click(function(){ $(this).next('.a').slideToggle(); });
+</script>

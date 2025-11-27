@@ -1,0 +1,16 @@
+<div id="gallery">
+    <img id="main" src="img1.jpg" width="400">
+    <div id="thumbs">
+        <img src="img1_thumb.jpg" data-full="img1.jpg" class="thumb">
+        <img src="img2_thumb.jpg" data-full="img2.jpg" class="thumb">
+    </div>
+</div>
+
+<script>
+    document.getElementById('thumbs').addEventListener('click', e=>{
+        const t = e.target;
+        if(t.classList.contains('thumb')) {
+            document.getElementById('main').src = t.dataset.full;
+        }
+    });
+</script>

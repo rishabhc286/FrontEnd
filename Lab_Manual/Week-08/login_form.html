@@ -1,0 +1,9 @@
+<button id="show">Show Login</button>
+<form id="login" style="display:none;">
+    <input placeholder="User"><button>Login</button>
+</form>
+
+<script>
+    $('#show').click(()=> $('#login').fadeIn());
+    $('#login').on('submit', (e)=> { e.preventDefault(); $('#login').fadeOut(); });
+</script>

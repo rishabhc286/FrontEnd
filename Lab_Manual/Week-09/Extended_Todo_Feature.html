@@ -1,0 +1,24 @@
+<ul id="tasks"></ul>
+<input id="t"><button id="add">Add</button>
+
+<script>
+    const tasks = document.getElementById('tasks');
+    document.getElementById('add').onclick = ()=>{
+        const text = document.getElementById('t').value.trim(); if(!text) return;
+        const li = document.createElement('li');
+        li.innerHTML = `<input type="checkbox"> <span>${text}</span>
+    <button class="up">↑</button> <button class="down">↓</button> <button class="del">x</button>`;
+        tasks.appendChild(li);
+    };
+    tasks.addEventListener('click', e=>{
+        if(e.target.classList.contains('del')) e.target.closest('li').remove();
+        if(e.target.classList.contains('up')){
+            const li = e.target.closest('li'); const prev = li.previousElementSibling;
+            if(prev) tasks.insertBefore(li, prev);
+        }
+        if(e.target.classList.contains('down')){
+            const li = e.target.closest('li'); const next = li.nextElementSibling;
+            if(next) tasks.insertBefore(next, li);
+        }
+    });
+</script>

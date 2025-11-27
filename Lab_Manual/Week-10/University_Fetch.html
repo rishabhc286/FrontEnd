@@ -1,0 +1,18 @@
+<input id="country" placeholder="Country">
+<button id="go">Search</button>
+<ul id="results"></ul>
+
+<script>
+    document.getElementById('go').onclick = async ()=>{
+        const c = document.getElementById('country').value.trim();
+        if(!c) return alert('Enter country');
+        const res = await fetch(`http://universities.hipolabs.com/search?country=${encodeURIComponent(c)}`);
+        const data = await res.json();
+        const ul = document.getElementById('results'); ul.innerHTML='';
+        data.slice(0,20).forEach(u=>{
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${u.name}</strong> — ${u.country} — <a href="${u.web_pages[0]}" target="_blank">website</a>`;
+            ul.appendChild(li);
+        });
+    };
+</script>

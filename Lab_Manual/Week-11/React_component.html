@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Hello World Component</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        h2 {
+            color: #0055aa;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-left: 4px solid #0055aa;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Creating a Simple HelloWorld Component</h2>
+
+<p>This is the first basic React component which returns a message using JSX.</p>
+
+<h3>App.jsx</h3>
+<pre>
+function HelloWorld() {
+  return (
+    <h1>Hello World</h1>
+  );
+}
+
+export default HelloWorld;
+</pre>
+
+<h3>main.jsx</h3>
+<pre>
+import React from "react";
+import ReactDOM from "react-dom/client";
+import HelloWorld from "./App.jsx";
+
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
+  <HelloWorld />
+);
+</pre>
+
+<p>When this runs, it will display:</p>
+<b>Hello World</b>
+
+</body>
+</html>

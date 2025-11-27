@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSX Dynamic Greeting</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        h2 {
+            color: #0055aa;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-left: 4px solid #0055aa;
+        }
+    </style>
+</head>
+<body>
+
+<h2>JSX Example with Variables and Functions</h2>
+
+<p>In React we can write JavaScript directly inside JSX.  
+Here is a small example where:</p>
+
+<ul>
+    <li>We store a name in a variable</li>
+    <li>We use a function to generate greeting</li>
+    <li>JSX shows the output on the screen</li>
+</ul>
+
+<h3>App.jsx</h3>
+<pre>
+function App() {
+
+  const studentName = "Garv";
+
+  function greeting() {
+    return "Welcome " + studentName + " to React!";
+  }
+
+  return (
+    <div>
+      <h1>{greeting()}</h1>
+    </div>
+  );
+}
+
+export default App;
+</pre>
+
+<h3>main.jsx</h3>
+<pre>
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
+  <App />
+);
+</pre>
+
+<p>This will show a dynamic message like:</p>
+<b>Welcome Garv to React!</b>
+
+</body>
+</html>

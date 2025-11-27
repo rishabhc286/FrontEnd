@@ -1,0 +1,23 @@
+/* element selector */
+body { font-family: Arial, sans-serif; }
+
+/* class selector */
+.highlight { background: rgba(255, 200, 0, 0.2); }
+
+/* id selector */
+#hero { padding: 2rem; }
+
+/* attribute selector */
+a[target="_blank"] { text-decoration: underline; }
+
+/* pseudo-class */
+li:first-child { font-weight: bold; }
+
+/* pseudo-element */
+p::first-letter { font-size: 2rem; }
+
+/* color formats */
+.header { color: #1a73e8; }      /* HEX */
+.sub { color: rgb(34,139,34); }  /* RGB */
+.note { color: rgba(0,0,0,0.6);} /* RGBA */
+.accent { color: hsl(200,80%,40%);} /* HSL */
